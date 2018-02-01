@@ -8,6 +8,4 @@
 $ vue init serjihsklovski/vfs my-project
 # some prompts go here...
 $ cd my-project/
-$ yarn install
-$ yarn start
 ```
