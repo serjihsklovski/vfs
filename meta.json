@@ -20,5 +20,5 @@
       "default": "MIT"
     }
   },
-  "completeMessage": "{{#inPlace}}To get started:\n\n$ yarn install\n$yarn start{{else}}To get started:\n\n$ cd {{destDirName}}\n$ yarn install\n$ yarn start{{/inPlace}}"
+  "completeMessage": "{{#inPlace}}{{else}}To get started:\n\n$ cd {{destDirName}}{{/inPlace}}"
 }
