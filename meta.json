@@ -1,0 +1,24 @@
+{
+  "prompts": {
+    "name": {
+      "label": "Project name",
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "label": "Project description",
+      "type": "string",
+      "default": "A Vue.js project"
+    },
+    "author": {
+      "label": "Author",
+      "type": "string"
+    },
+    "license": {
+      "label": "License",
+      "type": "string",
+      "default": "MIT"
+    }
+  },
+  "completeMessage": "{{#inPlace}}To get started:\n\n$ yarn install\n$yarn start{{else}}To get started:\n\n$ cd {{destDirName}}\n$ yarn install\n$ yarn start{{/inPlace}}"
+}
