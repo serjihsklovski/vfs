@@ -20,5 +20,5 @@
       "default": "MIT"
     }
   },
-  "completeMessage": "{{#inPlace}}{{else}}To get started:\n\n$ cd {{destDirName}}{{/inPlace}}"
+  "completeMessage": "{{#inPlace}}{{else}}To get started:\n\n$ cd {{destDirName}}\n$ yarn install\n$ yarn build\n\nThen open `./dist/index.html` in you browser.{{/inPlace}}"
 }
