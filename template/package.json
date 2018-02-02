@@ -4,5 +4,16 @@
   "version": "1.0.0",
   "author": "{{ author }}",
   "license": "{{ license }}",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build:dev": "webpack --env.profile=dev",
+    "build:prod": "webpack --env.profile=prod",
+    "build": "webpack --env.profile=prod"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.18",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1"
+  }
 }
