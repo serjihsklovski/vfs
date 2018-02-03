@@ -20,7 +20,6 @@ module.exports = {
       root: ROOT_PATH,
     }),
     new HtmlWebpackPlugin({
-      title: '{{ name }}',
       template: Path.resolve(ROOT_PATH, './src/index.template.html'),
     }),
   ],
