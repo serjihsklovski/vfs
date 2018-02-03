@@ -3,23 +3,25 @@ const Path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const ROOT_PATH = Path.resolve(__dirname, '../');
+
 module.exports = {
   entry: {
-    app: './src/index.js',
+    app: Path.resolve(ROOT_PATH, './src/index.js'),
   },
   output: {
+    path: Path.resolve(ROOT_PATH, './dist'),
     filename: '[name].bundle.js',
-    path: Path.resolve(__dirname, '../dist'),
   },
   plugins: [
     new CleanWebpackPlugin([
-      'dist',
+      './dist',
     ], {
-      root: Path.resolve(__dirname, '../'),
+      root: ROOT_PATH,
     }),
     new HtmlWebpackPlugin({
       title: '{{ name }}',
-      template: './src/index.template.html',
+      template: Path.resolve(ROOT_PATH, './src/index.template.html'),
     }),
   ],
 };
