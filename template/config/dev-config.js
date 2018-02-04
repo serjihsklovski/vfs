@@ -1,6 +1,5 @@
-const WebpackMerge = require('webpack-merge');
-const BaseConfig = require('./base-config');
-
-module.exports = WebpackMerge(BaseConfig, {
-  devtool: 'inline-source-map',
-});
+module.exports = env => {
+  return {
+    devtool: 'inline-source-map',
+  };
+};
