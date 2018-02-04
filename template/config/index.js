@@ -1,3 +1,5 @@
+const WebpackMerge = require('webpack-merge');
+
 module.exports = {
-  load: profile => require(`./${profile}-config`),
+  load: (profile, env) => WebpackMerge(require('./base-config')(env), require(`./${profile}-config`)(env)),
 };
