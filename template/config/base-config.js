@@ -24,5 +24,9 @@ module.exports = env => {
         template: Path.resolve(ROOT_PATH, './src/index.template.html'),
       }),
     ],
+    devServer: {
+      contentBase: './dist',
+      open: true,
+    },
   };
 };
