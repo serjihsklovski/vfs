@@ -13,5 +13,8 @@ $ vue init serjihsklovski/vfs my-project
 # some prompts go here...
 $ cd my-project/
 $ yarn install
+# then, you can eather make a bundle for deployment:
 $ yarn build
+# or, run the project using essential server for development:
+$ yarn start
 ```
