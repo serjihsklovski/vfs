@@ -17,6 +17,22 @@ module.exports = env => {
     module: {
       rules: [
         {
+          test: /\.sass$/i,
+          use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader?indentedSyntax',
+          ],
+        },
+        {
+          test: /\.scss$/i,
+          use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader',
+          ],
+        },
+        {
           test: /\.css$/i,
           use: [
             'style-loader',
