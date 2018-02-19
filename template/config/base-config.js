@@ -39,6 +39,18 @@ module.exports = env => {
             'css-loader',
           ],
         },
+        {
+          test: /\.(png|svg|jpe?g|gif)$/i,
+          use: [
+            'file-loader',
+          ],
+        },
+        {
+          test: /\.(woff2?|eot|[to]tf)$/i,
+          use: [
+            'file-loader',
+          ],
+        },
       ],
     },
     plugins: [
