@@ -1,4 +1,4 @@
-import './styles.css';
+import './styles.scss';
 
 function component() {
   var element = document.createElement('div');
