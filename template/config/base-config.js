@@ -17,6 +17,11 @@ module.exports = env => {
     module: {
       rules: [
         {
+          test: /\.js$/i,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+        },
+        {
           test: /\.sass$/i,
           use: [
             'style-loader',
@@ -41,15 +46,11 @@ module.exports = env => {
         },
         {
           test: /\.(png|svg|jpe?g|gif)$/i,
-          use: [
-            'file-loader',
-          ],
+          loader: 'file-loader',
         },
         {
           test: /\.(woff2?|eot|[to]tf)$/i,
-          use: [
-            'file-loader',
-          ],
+          loader: 'file-loader',
         },
       ],
     },
