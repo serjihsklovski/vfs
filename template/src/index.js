@@ -1,9 +1,8 @@
-import './styles.scss';
+import Vue from 'vue';
+import App from './components/App.vue';
 
-const component = () => {
-  const element = document.createElement('div');
-  element.innerHTML = 'Hello World!';
-  return element;
-};
-
-document.body.appendChild(component());
+new Vue({
+  el: '#app',
+  components: { App },
+  template: '<App/>',
+});

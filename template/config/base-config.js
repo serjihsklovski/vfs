@@ -10,12 +10,22 @@ module.exports = env => {
     entry: {
       app: Path.resolve(ROOT_PATH, './src/index.js'),
     },
+    resolve: {
+      extensions: ['*', '.js', '.vue', '.json'],
+      alias: {
+        'vue$': 'vue/dist/vue.esm.js',
+      },
+    },
     output: {
       path: Path.resolve(ROOT_PATH, './dist'),
       filename: '[name].bundle.js',
     },
     module: {
       rules: [
+        {
+          test: /\.vue$/i,
+          loader: 'vue-loader',
+        },
         {
           test: /\.js$/i,
           exclude: /node_modules/,
@@ -24,7 +34,7 @@ module.exports = env => {
         {
           test: /\.sass$/i,
           use: [
-            'style-loader',
+            'vue-style-loader',
             'css-loader',
             'sass-loader?indentedSyntax',
           ],
@@ -32,7 +42,7 @@ module.exports = env => {
         {
           test: /\.scss$/i,
           use: [
-            'style-loader',
+            'vue-style-loader',
             'css-loader',
             'sass-loader',
           ],
@@ -40,7 +50,7 @@ module.exports = env => {
         {
           test: /\.css$/i,
           use: [
-            'style-loader',
+            'vue-style-loader',
             'css-loader',
           ],
         },

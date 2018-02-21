@@ -5,6 +5,9 @@
 ## Frameworks and Technologies You Will Get
 
 * Webpack
+* Babel
+* Vue.js
+* Sass
 
 ## Usage
 
