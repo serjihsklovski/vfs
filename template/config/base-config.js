@@ -14,6 +14,46 @@ module.exports = env => {
       path: Path.resolve(ROOT_PATH, './dist'),
       filename: '[name].bundle.js',
     },
+    module: {
+      rules: [
+        {
+          test: /\.js$/i,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+        },
+        {
+          test: /\.sass$/i,
+          use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader?indentedSyntax',
+          ],
+        },
+        {
+          test: /\.scss$/i,
+          use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader',
+          ],
+        },
+        {
+          test: /\.css$/i,
+          use: [
+            'style-loader',
+            'css-loader',
+          ],
+        },
+        {
+          test: /\.(png|svg|jpe?g|gif)$/i,
+          loader: 'file-loader',
+        },
+        {
+          test: /\.(woff2?|eot|[to]tf)$/i,
+          loader: 'file-loader',
+        },
+      ],
+    },
     plugins: [
       new CleanWebpackPlugin([
         './dist',
