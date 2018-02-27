@@ -1,4 +1,4 @@
-import './assets/lib/bulma.scss';
+import './assets/lib/bulma/bulma.scss';
 
 import Vue from 'vue';
 import App from './components/App.vue';
