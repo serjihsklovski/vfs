@@ -7,6 +7,7 @@
 * Webpack
 * Babel
 * Vue.js
+* Bulma
 * Sass
 
 ## Usage
