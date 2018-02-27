@@ -72,7 +72,7 @@ module.exports = env => {
         },
         // vendors
         {
-          test: /src\/assets\/lib\/bulma\.scss$/i,
+          test: /src\/assets\/lib\/bulma\/bulma\.scss$/i,
           use: extractBulma.extract({
             use: [
               'css-loader',
