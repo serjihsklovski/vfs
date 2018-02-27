@@ -22,6 +22,7 @@
           'Webpack',
           'Babel',
           'Vue.js',
+          'Bulma',
           'Sass',
         ],
       };

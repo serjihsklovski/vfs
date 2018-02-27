@@ -2,10 +2,16 @@ const Path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 const ROOT_PATH = Path.resolve(__dirname, '../');
 
 module.exports = env => {
+  const extractBulma = new ExtractTextWebpackPlugin({
+    filename: 'bulma.extracted.css',
+    allChunks: true,
+  });
+
   return {
     entry: {
       app: Path.resolve(ROOT_PATH, './src/index.js'),
@@ -33,6 +39,7 @@ module.exports = env => {
         },
         {
           test: /\.sass$/i,
+          exclude: /node_modules/,
           use: [
             'vue-style-loader',
             'css-loader',
@@ -41,6 +48,7 @@ module.exports = env => {
         },
         {
           test: /\.scss$/i,
+          exclude: /node_modules/,
           use: [
             'vue-style-loader',
             'css-loader',
@@ -62,6 +70,17 @@ module.exports = env => {
           test: /\.(woff2?|eot|[to]tf)$/i,
           loader: 'file-loader',
         },
+        // vendors
+        {
+          test: /src\/assets\/lib\/bulma\/bulma\.scss$/i,
+          use: extractBulma.extract({
+            use: [
+              'css-loader',
+              'sass-loader',
+            ],
+            fallback: 'style-loader',
+          }),
+        },
       ],
     },
     plugins: [
@@ -73,6 +92,7 @@ module.exports = env => {
       new HtmlWebpackPlugin({
         template: Path.resolve(ROOT_PATH, './src/index.template.html'),
       }),
+      extractBulma,
     ],
     devServer: {
       contentBase: './dist',
