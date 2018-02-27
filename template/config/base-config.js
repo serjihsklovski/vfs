@@ -92,6 +92,7 @@ module.exports = env => {
       new HtmlWebpackPlugin({
         template: Path.resolve(ROOT_PATH, './src/index.template.html'),
       }),
+      extractBulma,
     ],
     devServer: {
       contentBase: './dist',
