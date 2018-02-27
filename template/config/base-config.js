@@ -92,6 +92,12 @@ module.exports = env => {
       new HtmlWebpackPlugin({
         template: Path.resolve(ROOT_PATH, './src/index.template.html'),
       }),
+      new CopyWebpackPlugin([
+        {
+          from: './src/assets/resources/',
+          to: './',
+        },
+      ]),
       extractBulma,
     ],
     devServer: {
