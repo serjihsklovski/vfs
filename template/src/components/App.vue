@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <h1>\{{ title }}</h1>
+    <Navbar brand-logo="/static/brand-logo.svg" home-page="https://github.com/serjihsklovski/vfs"/>
 
-    <p>Author: <a href="https://github.com/serjihsklovski" target="_blank">\{{ author }}</a></p>
-    <p>This project uses following frameworks and technologies:</p>
+    <section class="section">
+      <h1>\{{ title }}</h1>
 
-    <ul>
-      <li v-for="technology in technologies">\{{ technology }}</li>
-    </ul>
+      <p>Author: <a href="https://github.com/serjihsklovski" target="_blank">\{{ author }}</a></p>
+      <p>This project uses following frameworks and technologies:</p>
+
+      <ul>
+        <li v-for="technology in technologies">\{{ technology }}</li>
+      </ul>
+    </section>
   </div>
 </template>
 
 <script>
+  import Navbar from './Navbar.vue';
+
   export default {
     name: 'App',
     data () {
@@ -27,6 +33,7 @@
         ],
       };
     },
+    components: { Navbar },
   };
 </script>
 
