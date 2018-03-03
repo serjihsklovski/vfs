@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Navbar brand-logo="/static/brand-logo.svg" home-page="https://github.com/serjihsklovski/vfs"/>
+    <Hero/>
 
     <section class="section">
       <h1>\{{ title }}</h1>
@@ -17,6 +18,7 @@
 
 <script>
   import Navbar from './Navbar.vue';
+  import Hero from './Hero.vue';
 
   export default {
     name: 'App',
@@ -33,7 +35,7 @@
         ],
       };
     },
-    components: { Navbar },
+    components: { Navbar, Hero },
   };
 </script>
 
