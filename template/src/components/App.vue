@@ -13,12 +13,15 @@
         <li v-for="technology in technologies">\{{ technology }}</li>
       </ul>
     </section>
+
+    <CustomFooter/>
   </div>
 </template>
 
 <script>
   import Navbar from './Navbar.vue';
   import Hero from './Hero.vue';
+  import CustomFooter from './CustomFooter.vue';
 
   export default {
     name: 'App',
@@ -35,20 +38,9 @@
         ],
       };
     },
-    components: { Navbar, Hero },
+    components: { Navbar, Hero, CustomFooter },
   };
 </script>
 
 <style lang="scss" scoped>
-  $my-red: #d95642;
-  $font-color: #f4f4f4;
-
-  #app {
-    a {
-      color: $font-color;
-    }
-
-    background-color: $my-red;
-    color: $font-color;
-  }
 </style>
