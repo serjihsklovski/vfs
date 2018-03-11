@@ -1,43 +1,19 @@
 <template>
   <div id="app">
-    <Navbar brand-logo="/static/brand-logo.svg" home-page="https://github.com/serjihsklovski/vfs"/>
-    <Hero/>
-
-    <section class="section">
-      <h1>\{{ title }}</h1>
-
-      <p>Author: <a href="https://github.com/serjihsklovski" target="_blank">\{{ author }}</a></p>
-      <p>This project uses following frameworks and technologies:</p>
-
-      <ul>
-        <li v-for="technology in technologies">\{{ technology }}</li>
-      </ul>
-    </section>
-
-    <CustomFooter/>
+    <navbar brand-logo="/static/brand-logo.svg" home-page="https://github.com/serjihsklovski/vfs"/>
+    <hero/>
+    <router-view/>
+    <custom-footer/>
   </div>
 </template>
 
 <script>
-  import Navbar from './Navbar.vue';
-  import Hero from './Hero.vue';
-  import CustomFooter from './CustomFooter.vue';
+  import Navbar from './Navbar';
+  import Hero from './Hero';
+  import CustomFooter from './CustomFooter';
 
   export default {
     name: 'App',
-    data () {
-      return {
-        title: 'Vue Project Template',
-        author: 'Sergey Sokolov (serjihsklovski)',
-        technologies: [
-          'Webpack',
-          'Babel',
-          'Vue.js',
-          'Bulma',
-          'Sass',
-        ],
-      };
-    },
     components: { Navbar, Hero, CustomFooter },
   };
 </script>
