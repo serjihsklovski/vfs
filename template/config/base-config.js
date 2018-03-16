@@ -18,9 +18,10 @@ module.exports = env => {
       app: Path.resolve(ROOT_PATH, './src/index.js'),
     },
     resolve: {
-      extensions: ['*', '.js', '.vue', '.json'],
+      extensions: ['.js', '.vue', '.json'],
       alias: {
         'vue$': 'vue/dist/vue.esm.js',
+        '@': Path.resolve(ROOT_PATH, './src'),
       },
     },
     output: {
